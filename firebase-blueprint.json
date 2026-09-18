@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "uid": { "type": "string", "required": true },
+        "email": { "type": "string", "required": true },
+        "displayName": { "type": "string", "required": true },
+        "publicKeyJwk": { "type": "object", "required": false },
+        "status": { "type": "string", "required": true },
+        "lastSeen": { "type": "timestamp", "required": true },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Conversation": {
+      "collection": "conversations",
+      "fields": {
+        "participants": { "type": "array", "required": true },
+        "participantData": { "type": "object", "required": true },
+        "lastMessage": { "type": "object", "required": false },
+        "updatedAt": { "type": "timestamp", "required": true }
+      }
+    },
+    "Message": {
+      "collection": "conversations/{conversationId}/messages",
+      "fields": {
+        "senderId": { "type": "string", "required": true },
+        "senderEmail": { "type": "string", "required": true },
+        "encryptedCiphertext": { "type": "string", "required": true },
+        "iv": { "type": "string", "required": true },
+        "timestamp": { "type": "timestamp", "required": true },
+        "reactions": { "type": "object", "required": false }
+      }
+    },
+    "CallSession": {
+      "collection": "calls",
+      "fields": {
+        "callerId": { "type": "string", "required": true },
+        "callerName": { "type": "string", "required": true },
+        "receiverId": { "type": "string", "required": true },
+        "receiverName": { "type": "string", "required": true },
+        "callType": { "type": "string", "required": true },
+        "status": { "type": "string", "required": true },
+        "createdAt": { "type": "timestamp", "required": true }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Madebyshahzaib",
+  "description": "Modern minimal end-to-end encrypted real-time chat with instant user discovery, Google & GitHub login, live messaging, and voice/video calling.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
